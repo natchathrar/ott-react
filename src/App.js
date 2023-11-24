@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import OTTTable from './OttTable';
+import MovieForm from './MovieForm';
+import MoviesList from './MoviesList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/create" element={<MovieForm />} />
+        <Route path="/create/:id" element={<MovieForm />} />
+        <Route path="/" element={<MoviesList />} />
+        <Route path="/ottTable" element={<OTTTable />} />
+      </Routes>
     </div>
   );
 }
